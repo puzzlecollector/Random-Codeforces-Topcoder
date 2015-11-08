@@ -1,4 +1,3 @@
 # RandomCode
-Just for fun
-
+Random projects + problem solving
 
