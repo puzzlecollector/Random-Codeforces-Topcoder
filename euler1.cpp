@@ -1,4 +1,5 @@
 // Project Euler problem 1: https://projecteuler.net/problem=1
+// Minsuk (Luke) Kim
 #include <iostream>
 using namespace std; 
 
