@@ -1,4 +1,5 @@
 // problem: https://projecteuler.net/problem=2
+// Minsuk (Luke) Kim
 #include <iostream>
 #include <cstdlib>
 #include <algorithm>
