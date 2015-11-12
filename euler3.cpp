@@ -1,5 +1,6 @@
 // problem link: https://projecteuler.net/problem=3 
 // basic application of the sieve of eratosthenes
+// Minsuk (Luke) Kim
 #include <iostream>
 #include <cstdlib>
 #include <cmath> 
