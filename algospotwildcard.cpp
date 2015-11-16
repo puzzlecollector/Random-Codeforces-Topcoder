@@ -1,8 +1,7 @@
 /*
 Problem link: https://algospot.com/judge/problem/read/WILDCARD 
 와일드카드 패턴과 문자열의 길이가 모두 n이라고 할때, 부분문제의 최대 갯수는 n^2이고, 
-matchMemoized() 는 한번 호출될때마다 최대 n번의 재귀호출을 하기 때문에 전체 시간복잡도는 
-O(n^3). 
+따라서 시간복잡도 O(n^2)
 */
 
 #include <iostream>
