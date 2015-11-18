@@ -6,7 +6,7 @@ loop for about 10^6 times. This algorithm would have time complexity O(1).
 Now Sieve of eratosthenes again...  
 
 In this version I wrote all the primes to a txt file and viewed it in sublime text2 
-(or could be some other editor with line no), 
+(or could be some other editor with line number plugin), 
 and simply looked at line number 10001 to get the answer. 
 */
 #include <iostream>
