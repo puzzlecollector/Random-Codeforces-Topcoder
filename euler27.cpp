@@ -3,7 +3,6 @@ Problem Link: https://projecteuler.net/problem=27
 Not a very smart brute force, but the method works in 1~2 seconds
 Beware of negative values - negative numbers cannot be prime so exclude them from our calculations. 
 */
-
 #include <iostream>
 #include <cstdlib>
 #include <cstdio> 
