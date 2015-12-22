@@ -29,4 +29,4 @@ int main(){
 	return 0; 
 }
 
-// By Minsuk Luke Kim
+// By Minsuk Luke Kim (lukekms)
