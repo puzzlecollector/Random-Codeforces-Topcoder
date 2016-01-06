@@ -1,5 +1,11 @@
 /*
 Problem Link: http://codeforces.com/contest/610/problem/B
+Problem Analysis: Because n can be at most 200000, it is not a good idea to brute force our solution.  
+Now, we note that the answer should actually depend on the number of minimum values of the given array. 
+If the array contains a single minimum value, then we can start with the pain directly after the minimum value, 
+but if the array contains more than one minimum value, then we have to find the two minimum values that are furthest apart 
+and then add that distance to the value n*minimum value. This is because we can iterate at least n*minimum value times, and 
+we can iterate (max distance between two minimums) times more. 
 */ 
 #include <iostream> 
 #include <cstdlib> 
