@@ -1,3 +1,4 @@
+// Peking Online Judge Problem 1001. Can be solved using BigDecimal class. 
 import java.util.*;  
 import java.math.*;  
   
