@@ -31,7 +31,7 @@ int main(){
   for (;;){
     if (a > b) swap(a,b);  
     if (b%a == 0) break; 
-    if (b-a > a) bresak; 
+    if (b-a > a) break; 
     b -= a; 
     firstWins = !firstWins;  
    } 
