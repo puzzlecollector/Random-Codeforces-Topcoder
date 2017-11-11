@@ -39,7 +39,7 @@ int main(){
 		if (dp[i-1] == human || dp[i-3] == human || dp[i-4] == human) dp[i] = computer;  
 		else if (dp[i-1] == computer && dp[i-3] == computer && dp[i-4] == computer) dp[i] = human; 
 	}
-  cout << "The winner is: "; 
+  	cout << "The winner is: "; 
 	cout << (dp[n] == computer ? "computer" : "human") << endl; 
 	return 0;  
 }
@@ -65,7 +65,7 @@ int main(){
 	ll N; 
 	cin >> N;  
 	int dp[7] = {computer,human,computer,computer,computer,computer,human};  
-  cout << "the winner is: "; 
+ 	cout << "the winner is: "; 
 	cout << (dp[(N-1)%7] == computer ? "computer" : "human") << endl; 
 	return 0;  
 }
