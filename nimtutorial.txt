@@ -1,0 +1,71 @@
+This problem is actually based on this algorithm problem from acmicpc.net:  https://www.acmicpc.net/problem/9657 
+
+Note that there are two ways of solving this problem. 
+
+Method 1: O(n) dynamic programming approach 
+- define dp[i] = the winner when there are i stones left. dp[i] = 0 if the computer wins, and dp[i] = 1 if human wins.  
+- Let's investigate base cases first. If i = 1, the computer must win since it goes first. If i = 2, human must win since the computer can 
+only take one stone during its turn and the human takes the last stone during his/her turn. If i = 3, computer must win since it can take all 
+3 stones during its turn. If i = 4, computer must win since it can take all 4 stones during its turn. 
+- Starting from i = 5 onwards, we can deduce the answer recursively. Note that if dp[i-1] or dp[i-3] or dp[i-4] is a winning turn for the 
+human, then the computer must win for dp[i]. On the other hand, If all dp[i-1], dp[i-3], dp[i-4] are winning turns for a computer, 
+then the human wins for dp[i]. Why is this the case? Suppose i = 5. Then dp[i-1] = dp[4] = 0, dp[i-3] = dp[2] = 1, dp[i-4] = dp[1] = 0. 
+This means that if the computer takes 3 stones in its first turn, then the human is left with 2 stones. dp[2] = 1, and this means that 
+the entity going after is winning. Since the human has become the entity going first when there are 2 stones left, the computer (which is 
+the entity going after) must win. On the other hand, if dp[i-1] = dp[i-3] = dp[i-4] = 0, then whatever choice the computer makes, there is 
+no way for the computer to win.  
+- Below is a simple C++ code that implements the above idea. 
+
+// Computer starts first  
+#include <iostream>
+#include <cstdlib>
+#include <cstring> 
+#include <algorithm> 
+using namespace std; 
+#pragma GCC optimize ("-O3")
+#define computer 0 
+#define human 1 
+int dp[1001]; 
+int main(){
+	ios_base::sync_with_stdio(false); 
+	cin.tie(NULL);  
+	int n; 
+	cin >> n; 
+	dp[1] = computer; 
+	dp[2] = human; 
+	dp[3] = computer; 
+	dp[4] = computer;  
+	for (int i = 5; i <= n; i++){
+		if (dp[i-1] == human || dp[i-3] == human || dp[i-4] == human) dp[i] = computer;  
+		else if (dp[i-1] == computer && dp[i-3] == computer && dp[i-4] == computer) dp[i] = human; 
+	}
+  cout << "The winner is: "; 
+	cout << (dp[n] == computer ? "computer" : "human") << endl; 
+	return 0;  
+}
+
+Method 2: O(1) pattern finding solution 
+What if n is really large like 1000000000000000? Even O(n) time complexity is not so satisfying. 
+Actually, if you try values n = 1,2,3,4,... you'll soon find the pattern computer,human,computer,computer,computer,computer,human. 
+i.e. this repeats in the cycle of 7. Discovering this pattern allows us to find the answer in O(1) time complexity. Below is a C++ code 
+implementing this idea. 
+
+#include <iostream>
+#include <cstdlib>
+#include <cstring> 
+#include <algorithm> 
+using namespace std; 
+#pragma GCC optimize ("-O3")
+#define computer 0 
+#define human 1 
+int main(){
+	ios_base::sync_with_stdio(false); 
+	cin.tie(NULL);  
+	typedef long long ll; 
+	ll N; 
+	cin >> N;  
+	int dp[7] = {computer,human,computer,computer,computer,computer,human};  
+  cout << "the winner is: "; 
+	cout << (dp[(N-1)%7] == computer ? "computer" : "human") << endl; 
+	return 0;  
+}
